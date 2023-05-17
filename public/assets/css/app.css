@@ -1,0 +1,106 @@
+:root{
+--color_button: rgba(87, 85, 85, 0.16);
+--color_font: #000;
+}
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900');
+
+*{margin:0; padding:0; box-sizing:border-box;}
+
+::-webkit-scrollbar {
+width: 0px; 
+background: transparent;
+}
+
+html,body{height:100%; background: #FFFFFF; border-radius:10px; /* linear-gradient(to right, #ffa6a6, white, #a6adff); */
+}
+
+section {
+  width: 100%;
+  height: 80%;
+
+  display: grid;
+  grid-template-rows: 2fr 6fr;
+  grid-template-columns: 2fr 7fr 2fr;
+  gap: 5px;
+}
+section * {}
+.content{
+    margin: auto;
+}
+
+.bar{
+  margin:auto;
+  width: 100%;
+}
+
+.bar__body{
+    border: 1px solid #aaa; 
+    min-height: 80px; 
+    margin-top: 10px;
+}
+
+.bar__body_title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #aaa;
+    position: relative;
+    bottom: 10px;
+    left: 100px;
+    background: #fff;    
+}
+.bar__body__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: 0 auto; 
+}
+.bar__body__list_i{
+    cursor: pointer;
+    width: 130px;
+    height: 41px;
+
+    background: var(--color_button,rgba(87, 85, 85, 0.16));
+    border-radius: 5px;
+    float: left;
+    margin: 5px 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+}
+.__list_i_check{background: #ffffff00!important;}
+.i_width50{width: 50px!important;}
+.content td{padding: 10px;}
+.content input{width: 350px;}
+.button{
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 30px;
+    margin: 15px;
+    text-decoration: none;
+    color: var(--color_font, #000);
+    background: var(--color_button,rgba(87, 85, 85, 0.16));
+    border: solid #000 1px;
+    border-radius: 5px;
+    /*
+    position: relative;
+    top: calc(50vh - 140px);
+    left: calc(50% - 130px);
+    */
+}
+footer, header {text-align: center;} footer {color:#00f;} header {color:#f00;} a{text-decoration: none; color: var(--color_font, #000);}
+.footer {
+    text-align: center;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #FFFFFF;
+}

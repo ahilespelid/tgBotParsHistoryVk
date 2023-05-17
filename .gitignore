@@ -1,0 +1,9 @@
+node_modules/
+.idea/
+.vs/
+
+# macOS
+.DS_Store
+composer.lock
+
+/vendor/
