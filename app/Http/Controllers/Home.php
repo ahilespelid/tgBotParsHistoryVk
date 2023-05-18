@@ -8,7 +8,7 @@ use
     App\Models\StoryVk;
 
 
-class HomeController extends Controller{    
+class Home extends Controller{    
 public function index(){
 ///*/ Вкладка Суды-первой инстанции ///*/        
 return view('front.undefine',['deal' => []]);}
