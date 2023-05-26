@@ -20,7 +20,7 @@
         <span class="bar__body_title">Инстанции</span>
         <div class="bar__body__list">
             <a href="{{ route('front.home', ['deal_id' => $deal]) }}"><div class="bar__body__list_i i_width50"><=</div></a>
-            <a href="{{ route('front.home', ['tab' => 'public', 'deal_id' => $deal]) }}"><div class="bar__body__list_i @if('public' == '') __list_i_check @endif">Истории ВК</div></a>
+            <a href="{{ route('front.bot', ['time' => time(), 'deal_id' => $deal]) }}"><div class="bar__body__list_i @if('public' == '') __list_i_check @endif">Истории ВК</div></a>
 @if(4 == $deal)
 @elseif(6 == $deal)
 @endif
