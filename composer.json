@@ -12,7 +12,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "phpoffice/phpspreadsheet": "^1.23",
-        "telegram-bot/api": "^2.4"
+        "telegram-bot/api": "^2.4",
+        "vkcom/vk-php-sdk": "^5.131"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
