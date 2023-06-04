@@ -11,8 +11,32 @@ use
 
 class Home extends Controller{    
 public function index(){
-///*/ Вкладка Суды-первой инстанции ///*/
-pa((new TgBot())->vk_get('users')); exit;       
+///*/ Вкладка ///*/
+$p = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+//$stor = new \VK\Client\Actions\Stories;
+
+//pa($stor = json_decode(file_get_contents('https://api.vk.com/method/stories.get?v=5.131&access_token=vk1.a.nSCEXB7QWMAJyoF9w5FWjTXzdDJBwUx--HIdD6WTe-sPbzBMTVH09ktmCaT5yCHkXn859izVjjpu_R5gDb5jqxOy22XcslyzQrol1t38lWF1xMv3ihIzoH9AJZIHDLc1vtPyvblMY89r26ZEwLcT6OdpRYM_WmQtMoeSxBQx5_UWaK3txUw1Xhmv0YNS1yYEWPywIAZbxPutwYzP2Jcf_A')));
+
+$vkIds = (new TgBot())->vkIdGet('users', ['user_ids'  => [$p]]);
+ob_start(); pa($vkIds); $vkIdGet = ob_get_contents(); ob_end_clean();
+//$bot->sendMessage($cid, " vkIdGet: ". $vkIdGet);
+ for($i=0,$c=count($vkIds); $i<$c; $i++){$vkStoriesGet = (!empty((int) $id = $vkIds[$i]['id'])) ?(new TgBot())->vkStoriesGet($id, false) : '';}
+
+pa($vkStoriesGet);
+pa((new TgBot())->vkIdGet('users', ['user_ids'  => [$p], 'fields' => ['city', 'photo']], true)); exit;       
 return view('front.undefine',['deal' => []]);}
+
+
+//
+/*
+$request->validate([
+    'id' => 'required|regex:/^\d+$/u',
+    'tab' => 'required|regex:/^[a-z_]+$/u',
+    'deal_id' => 'required',
+    'deal_into_id' => 'required',
+    //'deal_id' => 'nullable|date',
+]);
+$structura = (is_array($structura)) ? array_fill_keys(array_keys($structura), '') : null; ///*/// array_fill_keys(array_keys($structura) -> берём ключи массива $structura и делаем пустой массив с ключами 
+
 
 }
