@@ -9,7 +9,9 @@ use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Types\ReplyKeyboardMarkup;
 use TelegramBot\Api\Types\ReplyKeyboardRemove;
 use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
+
 use 
+    App\Telegram\TgApi,
     App\Models\User;
 //
 /*/
@@ -18,10 +20,12 @@ https://oauth.vk.com/oauth/authorize?client_id=6178269&display=page&redirect_uri
 ///*/
 
 class TgBot extends Controller{
-    public $bot, $TgToken;
+    public $bot, $Bot, $TgToken;
     
 public function __construct(){
-    $this->TgToken = '5871515444:AAFAaK6eOl9Nc_OIvNvrOVWZxAxt4y2wh1Y';
+    $this->Bot = new TgApi;
+    $this->TgToken = getenv('TELEGRAM_BOT_TOKEN');
+    //$this->TgToken = '5871515444:AAFAaK6eOl9Nc_OIvNvrOVWZxAxt4y2wh1Y';
     $this->VkToken = 'vk1.a.nSCEXB7QWMAJyoF9w5FWjTXzdDJBwUx--HIdD6WTe-sPbzBMTVH09ktmCaT5yCHkXn859izVjjpu_R5gDb5jqxOy22XcslyzQrol1t38lWF1xMv3ihIzoH9AJZIHDLc1vtPyvblMY89r26ZEwLcT6OdpRYM_WmQtMoeSxBQx5_UWaK3txUw1Xhmv0YNS1yYEWPywIAZbxPutwYzP2Jcf_A';
     
     if(!file_exists("bot.txt")){
